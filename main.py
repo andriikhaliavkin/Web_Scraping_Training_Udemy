@@ -7,3 +7,11 @@ page = requests.get(url)
 
 soup = BeautifulSoup(page.text, 'lxml')
 print(soup)
+print('--------------------------')
+print(soup.header)
+print('--------------------------')
+
+tag = soup.header.p.string
+
+print(tag)
+
