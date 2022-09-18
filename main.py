@@ -10,8 +10,8 @@ print(soup)
 print('--------------------------')
 print(soup.header)
 print('--------------------------')
-
 tag = soup.header.p.string
-
 print(tag)
-
+print('--------------------------')
+tag = soup.header.a.attrs
+print(tag)
