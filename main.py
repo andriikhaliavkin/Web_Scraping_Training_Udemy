@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import re
 
 # # url = 'https://webscraper.io/test-sites/e-commerce/allinone/computers'
 # #
@@ -38,4 +39,16 @@ new_element = new_soup.find_all('a', {'class': 'title'})
 print(new_element)
 print('--------------------------')
 new_element = new_soup.find_all('p', {'class': 'pull-right'})
+print(new_element)
+print('--------------------------')
+new_element = new_soup.find_all(['h4', 'p'])
+print(new_element)
+print('--------------------------')
+new_element = new_soup.find_all(id = True)
+print(new_element)
+print('--------------------------')
+new_element = new_soup.find_all(string = 'Iphone')
+print(new_element)
+print('--------------------------')
+new_element = new_soup.find_all(string = re.compile('Iph'))
 print(new_element)
