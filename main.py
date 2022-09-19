@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
+import pandas as pd
+
 # # url = 'https://webscraper.io/test-sites/e-commerce/allinone/computers'
 # #
 # # page = requests.get(url)
@@ -62,3 +64,14 @@ for i in product_name:
     product_name_list.append(name)
 
 print(product_name_list)
+
+price = new_soup.find_all('h4', class_ = 'pull-right price')
+price_list = []
+for i in price:
+    price2 = i.text
+    price_list.append(price2)
+print(price_list)
+
+
+table = pd.DataFrame({'product name': product_name_list, 'price list': price_list})
+print(table)
