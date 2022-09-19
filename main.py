@@ -52,3 +52,13 @@ print(new_element)
 print('--------------------------')
 new_element = new_soup.find_all(string = re.compile('Iph'))
 print(new_element)
+print('--------------------------')
+print('--------------------------')
+print('--------------------------')
+product_name = new_soup.find_all('a', class_ = 'title')
+product_name_list =[]
+for i in product_name:
+    name = i.text
+    product_name_list.append(name)
+
+print(product_name_list)
